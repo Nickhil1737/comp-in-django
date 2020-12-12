@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Complexity Determiner</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <style>
+            body{
+            background-color:lightgray;
+            margin:0px;
+            padding:0px;
+            }
+            #heading{
+            background-color:black;
+            color:lightgray;
+            margin:0px;
+            padding:20px;
+            text-decoration:underline;
+            text-align:left;
+            }
+            .editp{
+            color:black;
+            margin-top:30px;
+            margin-bottom:10px;
+            margin-left:30px;
+            padding-left:20px;
+            }
+            .container{
+            padding-left:20px;
+            margin-left:30px;
+            margin-top:10px;
+            }
+            .myform{
+            padding-bottom:20px;
+            float:left;
+            width:70%;
+            }
+            .myform label{
+            //    display:block;
+            }
+            .myform textarea{
+            width:85%;
+            }
+            .buttonsub{
+            margin:10px 0px 10px 40px;
+            background-color:black;
+            width:20%;
+            padding:8px;
+            color:lightgray;
+            }
+            .buttonsub:hover{
+            background-color:red;
+            color:yellow;
+            }
+
+            .tablehead{
+            font-weight:bold;
+            }
+            .styletable{
+            float:left;
+            margin-left:50px;
+            margin-right:50px;
+            box-sizing:border-box;
+            width:20%;
+
+            }
+            .styletable table,td,th{
+            font: normal 20px Arial;
+            padding:5px;
+            border: 2px solid black;
+            border-collapse:collapse;
+            text-align:center;
+
+            }
+            .styletable a{
+            color:#102020;
+            }
+            .styletable a:hover{
+            color:blue;
+            }
+            .styletable a:active{
+            black;
+            }
+            .styletable a:visited{
+            coral;
+            }
+            .clr{
+            clear:both;
+            }
+
+            #footstyle{
+            text-align:center;
+            margin:30px 30px;
+            }
+
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <header id="heading">
+            <h1 >Complexity Determiner implemented for python
+            programs</h1>
+        </header>
+        <section class="editp">
+            <p ><span style="text-decoration:underline;" >Brief
+                Description:</span><br>To get the complexity of any
+        python program, upload the python program file or enter(/paste) the
+        code in the text-area and hit 'Submit' button.</p>
+        </section>
+        <br>
+
+        <div class="container">
+                <p>Note: The program should contain only function definition and
+            the specified arguments in the function definition should be just
+            reference to the array</p>
+
+        <form class ="myform" enctype="multipart/form-data" action="" method="post"> <!-- Do not forget to add: enctype="multipart/form-data" -->
+            {% csrf_token %}
+            {{ form }}
+            <input class="buttonsub" type="submit" value="Submit">
+        </form>
+        <div class="styletable">
+            <table>
+                <caption class=tablehead>Standard Algorithms</caption>
+                <tr>
+                    <td>
+                        <a
+                            href="https://raw.githubusercontent.com/NikhilistRaj/Algorithms-Implentation-in-Python/master/selectionSort.py"
+                            target=__blank>Selection Sort</a>
+                    </td>
+                    <td>
+                        <a
+                            href="https://raw.githubusercontent.com/NikhilistRaj/Algorithms-Implentation-in-Python/master/selectionSort.py"
+                            target=__blank>Selection Sort</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a
+                            href="https://raw.githubusercontent.com/NikhilistRaj/Algorithms-Implentation-in-Python/master/insertionSort.py"
+                            target=__blank>Insertion Sort</a>
+                    </td>
+                    <td>
+                        <a
+                            href="https://raw.githubusercontent.com/NikhilistRaj/Algorithms-Implentation-in-Python/master/selectionSort.py"
+                            target=__blank>Selection Sort</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a
+                            href="https://raw.githubusercontent.com/NikhilistRaj/Algorithms-Implentation-in-Python/master/selectionSort.py"
+                            target=__blank>Quick Sort</a>
+                    </td>
+                    <td>
+                        <a
+                            href="https://raw.githubusercontent.com/NikhilistRaj/Algorithms-Implentation-in-Python/master/selectionSort.py"
+                            target=__blank>Quick Sort</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a
+                            href="https://raw.githubusercontent.com/NikhilistRaj/Algorithms-Implentation-in-Python/master/mergeSort.py"
+                            target=__blank>Merge Sort</a>
+                    </td>
+                    <td>
+                        <a
+                            href="https://raw.githubusercontent.com/NikhilistRaj/Algorithms-Implentation-in-Python/master/quickSort.py"
+                            target=__blank>Quick Sort</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a
+                            href="https://github.com/NikhilistRaj/Algorithms-Implentation-in-Python/blob/master/bubbleSort.py"
+                            target=__blank>Factorial</a>
+                    </td>
+                    <td>
+                        <a
+                            href="https://github.com/NikhilistRaj/Algorithms-Implentation-in-Python/blob/master/bubbleSort.py"
+                            target=__blank>Bubble Sort</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a
+                            href="https://github.com/NikhilistRaj/Algorithms-Implentation-in-Python/blob/master/bubbleSort.py"
+                            target=__blank>Factorial</a>
+                    </td>
+                    <td>
+                        <a
+                            href="https://github.com/NikhilistRaj/Algorithms-Implentation-in-Python/blob/master/bubbleSort.py"
+                            target=__blank>DNF Sort</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a
+                            href="https://raw.githubusercontent.com/NikhilistRaj/Algorithms-Implentation-in-Python/master/binarySearch.py"
+                            target=__blank>Binary Search</a>
+                    </td>
+                    <td>
+                        <a
+                            href="https://raw.githubusercontent.com/NikhilistRaj/Algorithms-Implentation-in-Python/master/binarySearch.py"
+                            target=__blank>Factorial</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a
+                            href="https://raw.githubusercontent.com/NikhilistRaj/Algorithms-Implentation-in-Python/master/linearSearch.py"
+                            target=__blank>Linear Search</a>
+                    </td>
+                    <td>
+                        <a
+                            href="https://raw.githubusercontent.com/NikhilistRaj/Algorithms-Implentation-in-Python/master/linearSearch.py"
+                            target=__blank>Factorial</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a
+                            href="https://raw.githubusercontent.com/NikhilistRaj/Algorithms-Implentation-in-Python/master/quickSort.py"
+                            target=__blank>Heap Sort</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a
+                            href="https://raw.githubusercontent.com/NikhilistRaj/Algorithms-Implentation-in-Python/master/quickSort.py"
+                            target=__blank>Pop Stack</a>
+                    </td>
+                    <td>
+                        <a
+                            href="https://github.com/NikhilistRaj/Algorithms-Implentation-in-Python/blob/master/bubbleSort.py"
+                            target=__blank>Pop Stack</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                            <a
+                                href="https://github.com/NikhilistRaj/Algorithms-Implentation-in-Python/blob/master/bubbleSort.py"
+                                target=__blank>Find max_element</a>
+                    </td>
+                    <td>
+                            <a
+                                href="https://github.com/NikhilistRaj/Algorithms-Implentation-in-Python/blob/master/bubbleSort.py"
+                                target=__blank>Pop Stack</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                            <a
+                                href="https://github.com/NikhilistRaj/Algorithms-Implentation-in-Python/blob/master/bubbleSort.py"
+                                target=__blank>Factorial</a>
+                    </td>
+                    <td>
+                            <a
+                                href="https://github.com/NikhilistRaj/Algorithms-Implentation-in-Python/blob/master/bubbleSort.py"
+                                target=__blank>Fibonacci Sequence</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                            <a
+                                href="https://github.com/NikhilistRaj/Algorithms-Implentation-in-Python/blob/master/bubbleSort.py"
+                                target=__blank>Fibonacci Sequence</a>
+                    </td>
+                    <td>
+                            <a
+                                href="https://github.com/NikhilistRaj/Algorithms-Implentation-in-Python/blob/master/bubbleSort.py"
+                                target=__blank>Factorial</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        </div> <!--container 1-->
+        <div class="clr">   </div>
+        <footer id="footstyle">
+            Created by: astrainL3gi0N
+        </footer>
+
+    </body>
+
+</html>
+
+
