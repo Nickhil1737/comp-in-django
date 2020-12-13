@@ -1,3 +1,4 @@
+import sys
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import UploadFileForm
@@ -8,7 +9,8 @@ def upload_file(request):
         form = UploadFileForm(request.POST, request.FILES)
         if form.is_valid():
             handle_uploaded_file(request.FILES['file'])
-            return HttpResponseRedirect('/pogsolve/')
+            return HttpResponseRedirect('pogsolve')
+            
     else:
         form = UploadFileForm()
     return render(request, 'upload_doc.html', {'form': form})
@@ -20,5 +22,8 @@ def handle_uploaded_file(f):
 
 def pogsolve(request):
     rescomp = newfind.findcompx()
-    context = {'rescomp': rescomp}
+    filep = open("pog/solve.py","r")
+    pfile = filep.readlines()
+
+    context = {'pfile':pfile,'rescomp': rescomp}
     return render(request, 'givecomp.html', context)
