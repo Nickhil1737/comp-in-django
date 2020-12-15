@@ -2,8 +2,6 @@ import sys
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import UploadFileForm
-from . import newfind
-
 def upload_file(request):
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
@@ -21,6 +19,7 @@ def handle_uploaded_file(f):
             destination.write(chunk)
 
 def pogsolve(request):
+    from . import newfind
     rescomp = newfind.findcompx()
     filep = open("pog/solve.py","r")
     pfile = filep.readlines()
