@@ -36,5 +36,5 @@ def compxdet(request):
     with open('compx/solve.py') as filep:
             pfile =list( csv.reader(filep,delimiter='\n'))
 
-    context = {'pfile':pfile,'rescomp': rescomp}
+    context = {'functionName':functionName,'pfile':pfile,'rescomp': rescomp}
     return render(request, 'givecomp.html', context)
