@@ -1,65 +1,20 @@
-# Python program for implementation of MergeSort 
-
-# Merges two subarrays of arr[]. 
-# First subarray is arr[l..m] 
-# Second subarray is arr[m+1..r] 
-def merge(arr, l, m, r): 
-    n1 = m - l + 1
-    n2 = r- m 
-
-    # create temp arrays 
-    L = [0] * (n1) 
-    R = [0] * (n2) 
-
-    # Copy data to temp arrays L[] and R[] 
-    for i in range(0 , n1): 
-        L[i] = arr[l + i] 
-
-    for j in range(0 , n2): 
-        R[j] = arr[m + 1 + j] 
-
-    # Merge the temp arrays back into arr[l..r] 
-    i = 0     # Initial index of first subarray 
-    j = 0     # Initial index of second subarray 
-    k = l     # Initial index of merged subarray 
-
-    while i < n1 and j < n2 : 
-        if L[i] <= R[j]: 
-            arr[k] = L[i] 
-            i += 1
-        else: 
-            arr[k] = R[j] 
-            j += 1
-        k += 1
-
-    # Copy the remaining elements of L[], if there 
-    # are any 
-    while i < n1: 
-        arr[k] = L[i] 
-        i += 1
-        k += 1
-
-    # Copy the remaining elements of R[], if there 
-    # are any 
-    while j < n2: 
-        arr[k] = R[j] 
-        j += 1
-        k += 1
-
-# l is for left index and r is right index of the 
-# sub-array of arr to be sorted 
-def mergesort(arr,l,r): 
-    if l < r: 
-
-        # Same as (l+r)//2, but avoids overflow for 
-        # large l and h 
-        m = (l+(r-1))//2
-
-        # Sort first and second halves 
-        mergesort(arr, l, m) 
-        mergesort(arr, m+1, r) 
-        merge(arr, l, m, r) 
+# Python program for implementation of Linear Serach
+# Function needs an array and element to be found
+def LinearSearch(arr,x): 
+    n = len(arr)
+    flag = False
+    # Traverse through all array elements 
+    for i in range(n):
+        # Condition to check weather the element is found or not
+        
+        if arr[i] == x:
+            # Return True and the Set pos to index of Element in arr
+            return True
+    # Return -1 if no elemet found    
+    return False   
+        
+# TEST
 
 def solve(arr):
-    mergesort(arr,0,len(arr)-1)
+    LinearSearch(arr,14095505)
 solve([1,1,1])

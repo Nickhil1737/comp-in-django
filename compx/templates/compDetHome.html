@@ -33,6 +33,15 @@
         </form>
         <div class="styletable">
         <h2>Recent Uploads</h2>
+        <ul>
+        {% for f in allinstances %}
+        <li>
+        <a href = "{% url 'compxdet' %}">
+        {{f.fname_field}}</a>  {{f.complexity_field}}
+        {{f.id}}
+        </li>
+        {% endfor %}
+        </ul>
         </div>
 
         <div class="clr">
