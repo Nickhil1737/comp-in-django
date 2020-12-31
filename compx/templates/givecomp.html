@@ -1,18 +1,17 @@
 {% extends "basetemplate.html" %}
     {% block compSuccess %}
     <div class="container">
-        <h2>Program : {{instance1.fname_field}}</h2>
-        {{instance1.code_field}}
+        <h2>Program : <h2>
 
         <br>
-        <h1>The complexity of the program :  O({{instance1.complexity_field}})</h1>
+        <h1>The complexity of the program :  O()</h1>
     </div>
         <h2>Recent Uploads</h2>
         <ul>
-        {% for f in allinstances %}
+        {% for f in instances %}
         <li>
         {{f.fname_field}}{{f.complexity_field}}
-        <h4>program:</h4>
+        <h4>program:{{f.id}}</h4>
         {{f.code_field}}
         </li>
         {% endfor %}
