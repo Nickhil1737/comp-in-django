@@ -12,8 +12,12 @@ The repository consists of django web application for the project Complexity-Det
    
    -> cd comp-in-django
    
-   -> python3 manage,py runserver
+   -> python3 manage.py makemigrations
    
-  <img src="https://github.com/Nickhil1737/comp-in-django/blob/master/compx/static/images/Screenshot_2020-12-26_20-16-06.png">
+   -> python3 manage.py migrate
+   
+   -> python3 manage.py runserver
+   
 
-<img src="https://github.com/Nickhil1737/comp-in-django/blob/master/compx/static/images/Screenshot_2020-12-26_20-15-12.png">
+<img src="https://github.com/Nickhil1737/comp-in-django/blob/classview/compx/static/images/Screenshot_2021-01-01_17-55-08.png">
+img src= "https://github.com/Nickhil1737/comp-in-django/blob/classview/compx/static/images/Screenshot_2021-01-01_17-55-42.png">
