@@ -8,3 +8,5 @@ class ModelWithFileField(models.Model):
     code_field = models.TextField(default="not found")
     complexity_field = models.CharField(max_length=30,default='logarithmic')
 
+    def get_absolute_url(self):
+        return reverse('compxdet',args=[str(self.id)])

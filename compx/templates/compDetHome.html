@@ -34,9 +34,9 @@
         <div class="styletable">
         <h2>Recent Uploads</h2>
         <ul>
-        {% for f in allinstances %}
+        {% for f in instances %}
         <li>
-        <a href = "{% url 'compxdet' %}">
+        <a href = "{{f.get_absolute_url}}">
         {{f.fname_field}}</a>  {{f.complexity_field}}
         {{f.id}}
         </li>
