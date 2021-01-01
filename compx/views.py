@@ -4,6 +4,7 @@ import sys
 import csv
 from django.http import HttpResponseRedirect
 #from django.views import View
+from django.urls import reverse
 from django.views.generic.base import TemplateView
 
 from django.shortcuts import render
@@ -43,7 +44,7 @@ class MyFormView(TemplateView):
             instance = ModelWithFileField(fname_field=fname,code_field=pfile,complexity_field=rescomp)
             instance.save()
             # <process form cleaned data>
-            return HttpResponseRedirect('')
+            return HttpResponseRedirect(reverse('compxdet',kwargs={'pk':instance.id}))
 
         return render(request, self.template_name,{'form': form,'allinstances':ModelWithFileField.objects.all()})
 
