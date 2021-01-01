@@ -31,14 +31,13 @@
     <br>
             <input class="buttonsub" type="submit" value="Submit">
         </form>
-        <div class="styletable">
+        <div class="editp">
         <h2>Recent Uploads</h2>
         <ul>
         {% for f in instances %}
         <li>
         <a href = "{{f.get_absolute_url}}">
         {{f.fname_field}}</a>  {{f.complexity_field}}
-        {{f.id}}
         </li>
         {% endfor %}
         </ul>
