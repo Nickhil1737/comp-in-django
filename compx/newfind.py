@@ -12,12 +12,14 @@ def findcompx(result):
     last_time = 1
     sizeorder = 2**20
     list2nbyn = []
+    timetakenlist = []
     for i in range(1, 21):
         arr = [random.randrange(-100000,100000) for i in range(2**i)]
         
         start_time = time.time()
         result(arr)
         time_taken = time.time()-start_time
+        timetakenlist.append(time_taken)
         time2nbyn = time_taken/last_time
         list2nbyn.append(round(time2nbyn))
         if time_taken > 1:
@@ -36,7 +38,7 @@ def findcompx(result):
         steps += 1
     if steps > 8:
         return complexity_dict[10]
-    return complexity_dict[steps]
+    return timetakenlist[-3:],complexity_dict[steps]
 
 # driver code
 
