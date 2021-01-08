@@ -19,5 +19,7 @@ The repository consists of django web application for the project Complexity-Det
    -> python3 manage.py runserver
    
 
-<img src="https://github.com/Nickhil1737/comp-in-django/blob/classview/compx/static/images/Screenshot_2021-01-01_17-55-08.png">
-<img src= "https://github.com/Nickhil1737/comp-in-django/blob/classview/compx/static/images/Screenshot_2021-01-01_17-55-42.png">
+<img src="https://github.com/Nickhil1737/comp-in-django/blob/classview/compx/static/images/main.png">
+<img src= "https://github.com/Nickhil1737/comp-in-django/blob/classview/compx/static/images/main2.png">
+<img src= "https://github.com/Nickhil1737/comp-in-django/blob/classview/compx/static/images/main3.png">
+
