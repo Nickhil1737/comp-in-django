@@ -12,6 +12,9 @@ from .models import ModelWithFileField
 import importlib
 sys.path.append('./compx')
 
+class homepage(TemplateView):
+    template_name = 'index.html'
+
 class MyFormView(TemplateView):
     form_class = UploadFileForm
     template_name = 'compDetHome.html'
