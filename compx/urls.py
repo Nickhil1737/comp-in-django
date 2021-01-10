@@ -5,9 +5,11 @@ from . import views
 from .views import MyFormView
 from .views import compxdet
 from .views import homepage
+from .views import compxcompare
 
 urlpatterns = [
     path('',homepage.as_view(), name='index'),
     path('compform',MyFormView.as_view(), name='compHome'),
     path('compxdet/<int:pk>',compxdet.as_view(), name='compxdet'),
+    path('compxcompare/<int:pk>/<int:pkk>',compxcompare.as_view()),
 ]

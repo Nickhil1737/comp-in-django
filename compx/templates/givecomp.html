@@ -1,24 +1,26 @@
 {% extends "basetemplate.html" %}
     {% block compSuccess %}
     <div class="container">
-        <h2>Program :{{instances.fname_field}} <h2>
-        <h4>program:{{instances.id}}</h4>
+        <h2>Program :{{instance.fname_field}} <h2>
+        <h4>program:{{instance.id}}</h4>
         <br>
-        <h1>The complexity of the program: O (  {{instances.complexity_field}} ) </h1>
+        <h1>The complexity of the program: O (  {{instance.complexity_field}} ) </h1>
 
         <h4>Code : </h4>
-        {{instances.code_field}}
+        {{instance.code_field}}
         <br>
         <br>
-        <h4>Last 3 time swamps</h4>
-        {{instances.time1_field}}
-        <br>
-        {{instances.time2_field}}
-        <br>
-        {{instances.time3_field}}
-        <br>
-        {{instances.complexity_key}}
-        <br>
+        <div class="editp">
+        <h2>Compare</h2>
+        <ul>
+        {% for f in instances %}
+        <li>
+        <a href = "/compx/compxcompare/{{f.id}}/{{instance.id}}">
+        {{f.fname_field}}</a>  {{f.complexity_field}}
+        </li>
+        {% endfor %}
+        </ul>
+        </div>
     </div>
         
 

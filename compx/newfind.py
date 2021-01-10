@@ -22,6 +22,8 @@ def findcompx(result):
         timetakenlist.append(time_taken)
         time2nbyn = time_taken/last_time
         list2nbyn.append(round(time2nbyn))
+
+        #print(str(2**i)+ "   " + str(time_taken))
         if time_taken > 1:
             sizeorder = 2**i
             break

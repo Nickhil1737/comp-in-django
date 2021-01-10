@@ -54,8 +54,29 @@ class compxdet(TemplateView):
     template_name = 'givecomp.html'
     model = ModelWithFileField
     def get(self, request, *args, **kwargs):
-        instances = ModelWithFileField.objects.get(id=kwargs['pk'])
-        return render(request, self.template_name, {'instances':instances})
+        instance = ModelWithFileField.objects.get(id=kwargs['pk'])
+        instances = ModelWithFileField.objects.all()
+        return render(request, self.template_name, {'instance':instance,'instances':instances})
+
+class compxcompare(TemplateView):
+    template_name = 'compare.html'
+    def get(self, request, *args, **kwargs):
+        instance = instance1 = ModelWithFileField.objects.get(id=kwargs['pk'])
+        instance2 = ModelWithFileField.objects.get(id=kwargs['pkk'])
+        i1 = 0
+        i2 = 0
+        if float(instance1.time1_field) > float(instance2.time1_field):
+            i1+=1
+        else:   i2+=1
+        if float(instance1.time2_field) > float(instance2.time2_field):
+            i1+=1
+        else:   i2+=1
+        if float(instance1.time3_field) > float(instance2.time3_field):
+            i1+=1
+        else:   i2+=1
+        if i1 < i2:
+            instance = instance2
+        return render(request, self.template_name, {'instance1':instance})
 def savetofile(f):
     with open('compx/solve.py', 'wb+') as destination:
         for chunk in f.chunks():
