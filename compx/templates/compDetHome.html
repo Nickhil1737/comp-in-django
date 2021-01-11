@@ -1,17 +1,15 @@
 {% extends "basetemplate.html" %}
 {%block compHomepage %}
         <section class="editp">
-            <p ><span style="text-decoration:underline;" >Brief
-                Description:</span><br>To get the complexity of any
-        python program, upload the python program file or enter(/paste) the
-        code in the text-area and hit 'Submit' button.</p>
+            <p ><span style="text-decoration:underline;" >
+                Instructions:</span><br>To get the complexity of any
+        python program, upload the python program .py file<br>Provide name of the particular function<br>Click 'Submit' button.</p>
+            <p ><span style="text-decoration:underline;" >
+                Note:</span><br>The file should contain python script<br>The program file should contain function with array passed as a parameter<br></p>
         </section>
         <br>
 
         <div class="container">
-                <p>Note: The program should contain only function definition and
-            the specified arguments in the function definition should be just
-            reference to the array</p>
 
         <form class ="myform" enctype="multipart/form-data" action="" method="post"> <!-- Do not forget to add: enctype="multipart/form-data" -->
             {% csrf_token %}
@@ -30,6 +28,14 @@
     <br>
     <br>
             <input class="buttonsub" type="submit" value="Submit">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
         </form>
         <div class="editp">
         <h2>Recent Uploads</h2>

@@ -36,14 +36,15 @@ class MyFormView(TemplateView):
             lib = importlib.import_module(filename)
             result = getattr(lib,fname)
             timetakenlist,rescomp = newfind.findcompx(result)
-            print(timetakenlist)
-            pfile = ""
 
             with open('compx/solve.py') as filep:
                 pfile=filep.readlines()
+            psfile = ""
+            for x in pfile:
+                psfile += x
 
 
-            instance = ModelWithFileField(fname_field=fname,code_field=pfile,complexity_field=rescomp,complexity_key=rescomp,time1_field=str(timetakenlist[0]),time2_field=str(timetakenlist[1]),time3_field=str(timetakenlist[2]))
+            instance = ModelWithFileField(fname_field=fname,code_field=psfile,complexity_field=rescomp,complexity_key=rescomp,time1_field=str(timetakenlist[0]),time2_field=str(timetakenlist[1]),time3_field=str(timetakenlist[2]))
             instance.save()
             # <process form cleaned data>
             return HttpResponseRedirect(reverse('compxdet',kwargs={'pk':instance.id}))
@@ -61,8 +62,8 @@ class compxdet(TemplateView):
 class compxcompare(TemplateView):
     template_name = 'compare.html'
     def get(self, request, *args, **kwargs):
-        instance = instance1 = ModelWithFileField.objects.get(id=kwargs['pk'])
-        instance2 = ModelWithFileField.objects.get(id=kwargs['pkk'])
+        instance = instance2 = ModelWithFileField.objects.get(id=kwargs['pk'])
+        instance1 = ModelWithFileField.objects.get(id=kwargs['pkk'])
         i1 = 0
         i2 = 0
         if float(instance1.time1_field) > float(instance2.time1_field):
@@ -75,7 +76,9 @@ class compxcompare(TemplateView):
             i1+=1
         else:   i2+=1
         if i1 < i2:
-            instance = instance2
+            instance = instance1
+        tlist = (instance.code_field)
+            
         return render(request, self.template_name, {'instance1':instance})
 def savetofile(f):
     with open('compx/solve.py', 'wb+') as destination:
