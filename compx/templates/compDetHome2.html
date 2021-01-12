@@ -1,16 +1,38 @@
 
 {% extends "basetemplate.html" %}
 {%block compHomepage %}
+<style type="text/css">
+    .rightpane {
+  width: 25%;
+  height: 100%;
+  position: relative;
+  float: right;
+  background-color: rgba(0,0,0, 0.4);
+  border-collapse: collapse;
+  color:#ffffff
+
+</style>
+        <div class="editp rightpane">
+        <h2>Recent Uploads</h2>
+        <ul>
+        {% for f in instances %}
+        <li>
+        <a href = "{{f.get_absolute_url}}">
+        {{f.fname_field}}</a>
+        </li>
+        {% endfor %}
+        </ul>
+        </div>
         <section class="editp">
-            <p ><span style="text-decoration:underline;" >
-                Instructions:</span><br>To get the complexity of any
-        python program, upload the python program .py file<br>Provide name of the particular function<br>Click 'Submit' button.</p>
-            <p ><span style="text-decoration:underline;" >
-                Note:</span><br>The file should contain python script<br>The program file should contain function with array passed as a parameter<br></p>
+            <h2><p style="color:#ffffff" class="fw-light"><span style="text-decoration:underline;"  >
+                Instructions:</span></h2><h3 style="color:#ffffff" class="fw-light"><span >To get the complexity of any
+        python program, upload the python program .py file<br>Provide name of the particular function<br>Click 'Submit' button.</h3></p>
+            <p style="color:#ffffff" class="fw-light"><span >
+                <h2 style="color:#ffffff" class="fw-light"><span style="text-decoration:underline;" >Note:</h2></span><h3 style="color:#ffffff" class="fw-light"><span>The file should contain python script <br>The program file should contain function with array passed as a parameter</h3></p>
         </section>
         <br>
 
-        <div class="container">
+        <div class="container" style="color:#ffffff" class="fw-light">
 
         <form class ="myform" enctype="multipart/form-data" action="" method="post"> <!-- Do not forget to add: enctype="multipart/form-data" -->
             {% csrf_token %}
@@ -23,7 +45,7 @@
     <br>
 <div class="fieldWrapper">
     {{ form.file.errors }}
-    <label for="{{ form.code.id_for_label }}">Enter code here :</label>
+    <label for="{{ form.code.id_for_label }}">Upload a .py File:</label>
     {{ form.code }}
 </div>
     <br>
@@ -38,18 +60,9 @@
             <br>
             <br>
         </form>
-        <div class="editp">
-        <h2>Recent Uploads</h2>
-        <ul>
-        {% for f in instances %}
-        <li>
-        <a href = "{{f.get_absolute_url}}">
-        {{f.fname_field}}</a>  {{f.complexity_field}}
-        </li>
-        {% endfor %}
-        </ul>
-        </div>
+
 
         <div class="clr">
         </div>
 {% endblock %}
+
