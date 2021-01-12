@@ -3,9 +3,9 @@
     {% block compSuccess %}
     <div class="container">
             <h2><p style="color:#ffffff" class="fw-light"><span style="text-decoration:underline;"  >
-        The Faster Algorithm:-{{instance1.fname_field}}</p> </h2>
+        The Faster Algorithm:-{{instance.fname_field}}</p> </h2>
         <textarea readonly="readonly"  rows="40" cols="80">
-        {{instance1.code_field}}
+        {{instance.code_field}}
         </textarea>
         <br>
             <h2><p style="color:#ffffff" class="fw-light"><span style="text-decoration:underline;"  >
@@ -35,7 +35,7 @@
         The complexity of the program: &#920(n<sup>4</sup>) </h1>
         {% else  %}
             <h2><p style="color:#ffffff" class="fw-light"><span style="text-decoration:underline;"  >
-        The complexity of the program: &#920(exponential) </h1>
+        The complexity of the program: &#920(exponential) </h2>
         {% endif  %}
 
         <br>

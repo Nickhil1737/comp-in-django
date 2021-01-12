@@ -15,6 +15,9 @@ sys.path.append('./compx')
 
 class homepage(TemplateView):
     template_name = 'index.html'
+class exceptionview(TemplateView):
+    template_name = 'compexp.html'
+
 class MyFormView2(TemplateView):
     form_class =texTinpuTforM
     template_name = 'compDetHome2.html'
@@ -31,15 +34,18 @@ class MyFormView2(TemplateView):
             fname = form.cleaned_data['function_name']
             code = form.cleaned_data['code']
             savetofile(code,2)
-            from . import newfind
-            filename="solve"
-            rescomp = "1"
-            lib = importlib.import_module(filename)
-            result = getattr(lib,fname)
-            timetakenlist,rescomp = newfind.findcompx(result)
+            try:
+                from . import newfind
+                filename="solve"
+                rescomp = "1"
+                lib = importlib.import_module(filename)
+                result = getattr(lib,fname)
+                timetakenlist,rescomp = newfind.findcompx(result)
 
-            instance = ModelWithFileField(fname_field=fname,code_field=code,complexity_field=rescomp,complexity_key=rescomp,time1_field=str(timetakenlist[0]),time2_field=str(timetakenlist[1]),time3_field=str(timetakenlist[2]))
-            instance.save()
+                instance = ModelWithFileField(fname_field=fname,code_field=code,complexity_field=rescomp,complexity_key=rescomp,time1_field=str(timetakenlist[0]),time2_field=str(timetakenlist[1]),time3_field=str(timetakenlist[2]))
+                instance.save()
+            except:
+                return HttpResponseRedirect('compexp')
             # <process form cleaned data>
             return HttpResponseRedirect(reverse('compxdet',kwargs={'pk':instance.id}))
 
@@ -107,9 +113,10 @@ class compxcompare(TemplateView):
         else:   i2+=1
         if i1 < i2:
             instance = instance1
-        tlist = (instance.code_field)
+        if int(instance1.complexity_field) < int(instance2.complexity_field):
+            instance = instance1
             
-        return render(request, self.template_name, {'instance1':instance})
+        return render(request, self.template_name, {'instance':instance})
 def savetofile(f,k=1):
     if k == 2:
         with open('compx/solve.py', 'w+') as destination:
