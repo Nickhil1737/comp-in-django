@@ -4,4 +4,6 @@ class UploadFileForm(forms.Form):
     function_name = forms.CharField(max_length=50)
     file = forms.FileField()
 #    code = forms.CharField(widget=forms.Textarea)
-    fname="solve"
+class texTinpuTforM(forms.Form):
+    function_name = forms.CharField(max_length=50)
+    code = forms.CharField(widget=forms.Textarea)

@@ -8,7 +8,7 @@ from collections import Counter
 
 
 def findcompx(result):
-    complexity_dict = {1:'lgn', 2:'n', 3:'nlgn', 4:'n^2', 5:'n^2lgn', 6:'n^2lgn',7:'n^3',8:'n^3', 10:'exponential'}
+    complexity_dict = {"1":'lgn', "2":'n', "3":'nlgn', "4":'n^2', "5":'n^2lgn', "6":'n^2lgn',"7":'n^3',"8":'n^3', "10":'exponential'}
     last_time = 1
     sizeorder = 2**20
     list2nbyn = []
@@ -39,8 +39,8 @@ def findcompx(result):
     if steps == 2 and sizeorder < 1000000:
         steps += 1
     if steps > 8:
-        return complexity_dict[10]
-    return timetakenlist[-3:],complexity_dict[steps]
+        return "exponential"
+    return timetakenlist[-3:],str(steps)
 
 # driver code
 
