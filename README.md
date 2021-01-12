@@ -1,4 +1,4 @@
-# complexity-determiner for python programs
+# Complexity-Determiner for python programs
 
 The repository consists of django web application for the project Complexity-Determiner.
 
