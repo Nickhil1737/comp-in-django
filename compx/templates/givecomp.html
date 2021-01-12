@@ -1,44 +1,72 @@
 {% extends "basetemplate.html" %}
     {% block compSuccess %}
+<style type="text/css">
+    .rightpane {
+  width: 25%;
+  height: 100%;
+  position: relative;
+  float: right;
+  background-color: rgba(0,0,0, 0.4);
+  border-collapse: collapse;
+  color:#ffffff}
+  .centerpane {
+  width: 25%;
+  height: 100%;
+  position: relative;
+  background-color: rgba(0,0,0, 0.4);
+  border-collapse: collapse;
+  color:#ffffff}
+
+</style>
+    <div class="editp rightpane">
+    <h2>Compare</h2>
+    <ul>
+    {% for f in instances %}
+    <li>
+    <a href = "/compx/compxcompare/{{f.id}}/{{instance.id}}">
+    {{f.fname_field}}</a>  
+    </li>
+    {% endfor %}
+    </ul>
+    </div>
     <div class="container">
-        <h2>Program:-{{instance.fname_field}} <h2>
+            <h2><p style="color:#ffffff" class="fw-light"><span style="text-decoration:underline;"  >
+        Program:-{{instance.fname_field}} </p></h2>
         <textarea readonly="readonly"  rows="40" cols="80">
         {{instance.code_field}}
         </textarea>
         <br>
 
         {% if instance.complexity_field == "1" %}
-        <h1>The complexity of the program: &#920(log<sub>2</sub>n) </h1>
+            <h1><p style="color:#ffffff" class="fw-light"><span style="text-decoration:underline;"  >
+        The complexity of the program: &#920(log<sub>2</sub>n) <p></h1>
         {% elif instance.complexity_field == "2" %}
-        <h1>The complexity of the program: &#920(n) </h1>
+            <h1><p style="color:#ffffff" class="fw-light"><span style="text-decoration:underline;"  >
+        The complexity of the program: &#920(n) </h1>
         {% elif instance.complexity_field == "3" %}
-        <h1>The complexity of the program: &#920(nlog<sub>2</sub>n) </h1>
+            <h1><p style="color:#ffffff" class="fw-light"><span style="text-decoration:underline;"  >
+        The complexity of the program: &#920(nlog<sub>2</sub>n) </h1>
         {% elif instance.complexity_field == "4" %}
-        <h1>The complexity of the program: &#920(n<sup>2</sup>) </h1>
+            <h1><p style="color:#ffffff" class="fw-light"><span style="text-decoration:underline;"  >
+        The complexity of the program: &#920(n<sup>2</sup>) </h1>
         {% elif instance.complexity_field == "5" %}
-        <h1>The complexity of the program: &#920(n<sup>2</sup>lgn) </h1>
+            <h1><p style="color:#ffffff" class="fw-light"><span style="text-decoration:underline;"  >
+        The complexity of the program: &#920(n<sup>2</sup>lgn) </h1>
         {% elif instance.complexity_field == "6" %}
-        <h1>The complexity of the program: &#920(n<sup>2</sup>lgn) </h1>
+            <h1><p style="color:#ffffff" class="fw-light"><span style="text-decoration:underline;"  >
+        The complexity of the program: &#920(n<sup>2</sup>lgn) </h1>
         {% elif instance.complexity_field == "7" %}
-        <h1>The complexity of the program: &#920(n<sup>3</sup>) </h1>
+            <h1><p style="color:#ffffff" class="fw-light"><span style="text-decoration:underline;"  >
+        The complexity of the program: &#920(n<sup>3</sup>) </h1>
         {% elif instance.complexity_field == "8" %}
-        <h1>The complexity of the program: &#920(n<sup>4</sup>) </h1>
+            <p style="color:#ffffff" class="fw-light"><span style="text-decoration:underline;"  >
+        The complexity of the program: &#920(n<sup>4</sup>) </h1>
         {% else  %}
-        <h1>The complexity of the program: &#920(exponential) </h1>
+            <h1><p style="color:#ffffff" class="fw-light"><span style="text-decoration:underline;"  >
+        The complexity of the program: &#920(exponential) </h1>
         {% endif  %}
         <br>
         <br>
-        <div class="editp">
-        <h2>Compare</h2>
-        <ul>
-        {% for f in instances %}
-        <li>
-        <a href = "/compx/compxcompare/{{f.id}}/{{instance.id}}">
-        {{f.fname_field}}</a>  {{f.complexity_field}}
-        </li>
-        {% endfor %}
-        </ul>
-        </div>
     </div>
         
 
